@@ -1,8 +1,6 @@
-package com.springGB.springGB.services;
+package com.springGB.springGB.Lesson3.services;
 
-import com.springGB.springGB.dou.Student;
-import com.springGB.springGB.repositories.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.springGB.springGB.Lesson3.repositories.StudentRepository;
 import org.springframework.stereotype.Service;
 
 @Service

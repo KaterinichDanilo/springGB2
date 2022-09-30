@@ -1,8 +1,6 @@
-package com.springGB.springGB.controllers;
+package com.springGB.springGB.Lesson3.controllers;
 
-import com.springGB.springGB.dou.Student;
-import com.springGB.springGB.services.StudentService;
-import org.springframework.boot.Banner;
+import com.springGB.springGB.Lesson3.services.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
