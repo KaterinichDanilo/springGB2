@@ -1,4 +1,4 @@
-package com.springGB.springGB.dou;
+package com.springGB.springGB.Lesson3.dou;
 
 public class Student {
     private Long id;

@@ -1,6 +1,6 @@
-package com.springGB.springGB.repositories;
+package com.springGB.springGB.Lesson3.repositories;
 
-import com.springGB.springGB.dou.Student;
+import com.springGB.springGB.Lesson3.dou.Student;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
