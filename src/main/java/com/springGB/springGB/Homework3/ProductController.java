@@ -10,12 +10,14 @@ import java.util.List;
 //@RequestMapping("/products")
 public class ProductController {
     private final ProductService service;
+    private final CustomerService customerService;
 
-    public ProductController(ProductService service) {
+    public ProductController(ProductService service, CustomerService customerService) {
         this.service = service;
+        this.customerService = customerService;
     }
 
-//    @GetMapping("/product")
+    //    @GetMapping("/product")
 //    public String getProductById(Model model, @RequestParam(name = "id") Long id) {
 //        model.addAttribute("product", service.getProductById(id));
 //        return "product";
@@ -58,5 +60,25 @@ public class ProductController {
     public void delete(@PathVariable Long id) {
         Product product = service.getProductById(id);
         service.getListProducts().remove(product);
+    }
+
+    @GetMapping("/customer/all")
+    public List<Customer> getAllCustomers(){
+        return customerService.getCustomers();
+    }
+
+    @GetMapping("/customer/products")
+    public List<Product> getCustomerProducts(@RequestParam(name = "id") Long id){
+        return customerService.getProductListByCustomerId(id);
+    }
+
+    @GetMapping("/customer/get")
+    public Customer getCustomerById(@RequestParam(name = "id") Long id){
+        return customerService.getCustomerById(id);
+    }
+
+    @PostMapping("/customer/add")
+    public void addProductById(@RequestParam(name = "custid") Long custId, @RequestParam(name = "prodid") Long prodId){
+        customerService.addProductById(custId, prodId);
     }
 }

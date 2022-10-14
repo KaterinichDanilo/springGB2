@@ -1,6 +1,5 @@
 package com.springGB.springGB.homework4;
 
-import com.springGB.springGB.hibernate.User;
 import org.hibernate.Session;
 
 import java.util.List;

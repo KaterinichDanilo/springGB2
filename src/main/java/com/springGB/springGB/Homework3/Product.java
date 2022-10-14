@@ -1,21 +1,26 @@
 package com.springGB.springGB.Homework3;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "products")
 public class Product {
-    private static Long amount = 0L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "price")
     private int price;
 
-    public Product() {
-        amount++;
-        this.id = amount;
-    }
+    @ManyToOne
+    @JoinColumn(name = "cust_id")
+    private Customer customer;
 
-    public Product(String title, int price) {
-        amount++;
-        this.id = amount;
-        this.title = title;
-        this.price = price;
+    public Product() {
     }
 
     public Long getId() {
@@ -30,6 +35,10 @@ public class Product {
         return price;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -38,4 +47,11 @@ public class Product {
         this.price = price;
     }
 
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }
